@@ -1,0 +1,300 @@
+body {
+
+    font-family: 'Segoe UI', Arial, sans-serif;
+
+    text-align: center;
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    padding-top: 50px;
+
+
+    background:
+
+        linear-gradient(
+            rgba(30, 58, 95, 0.35),
+            rgba(147, 197, 253, 0.45)
+        ),
+
+        linear-gradient(
+            135deg,
+            #7dd3fc,
+            #c7d2fe,
+            #e0f2fe
+        );
+
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+
+
+/* Title */
+
+h1 {
+
+    color: white;
+
+    font-size: 40px;
+
+    font-weight: 700;
+
+    margin-bottom: 35px;
+
+
+    text-shadow:
+
+        0 3px 10px rgba(0,0,0,0.25);
+
+}
+
+
+
+/* Labels */
+
+label {
+
+    font-size: 18px;
+
+    color: white;
+
+    font-weight: 600;
+
+}
+
+
+
+/* Input + Dropdown */
+
+input, select {
+
+    width: 280px;
+
+    padding: 13px;
+
+    margin: 10px auto;
+
+    display: block;
+
+    border-radius: 15px;
+
+    border: none;
+
+    font-size: 16px;
+
+
+    background: rgba(255,255,255,0.85);
+
+
+    box-shadow:
+
+        0 8px 20px rgba(0,0,0,0.15);
+
+
+    outline: none;
+
+}
+
+
+
+/* Dropdown position */
+
+select {
+
+    transform: translateX(-8px);
+
+}
+
+
+
+
+
+/* Buttons */
+
+button {
+
+    padding: 13px 30px;
+
+    margin: 10px;
+
+    border: none;
+
+    border-radius: 30px;
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #0284c7,
+            #2563eb
+        );
+
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+
+    cursor: pointer;
+
+
+    box-shadow:
+
+        0 8px 20px rgba(0,0,0,0.25);
+
+
+    transition: 0.3s;
+
+}
+
+
+
+button:hover {
+
+    transform: translateY(-4px);
+
+
+    box-shadow:
+
+        0 12px 25px rgba(0,0,0,0.35);
+
+}
+
+
+
+
+/* Result Card */
+
+#result {
+
+    background:
+
+        rgba(255,255,255,0.75);
+
+
+    backdrop-filter:
+
+        blur(10px);
+
+
+    width: 380px;
+
+
+    margin: 25px auto;
+
+
+    padding: 25px;
+
+
+    border-radius: 25px;
+
+
+    color: #1e3a5f;
+
+
+    font-size: 18px;
+
+
+    box-shadow:
+
+        0 15px 35px rgba(0,0,0,0.2);
+
+}
+
+
+
+
+
+/* History Card */
+
+#history {
+
+    background:
+
+        rgba(255,255,255,0.75);
+
+
+    backdrop-filter:
+
+        blur(10px);
+
+
+    width: 380px;
+
+
+    margin: 25px auto;
+
+
+    padding: 25px;
+
+
+    border-radius: 25px;
+
+
+    color: #1e3a5f;
+
+
+    font-size: 17px;
+
+
+    line-height: 30px;
+
+
+    box-shadow:
+
+        0 15px 35px rgba(0,0,0,0.2);
+
+}
+
+
+
+/* History each item */
+
+#history p {
+
+    background:
+
+        rgba(255,255,255,0.6);
+
+
+    padding: 10px;
+
+
+    margin: 10px 0;
+
+
+    border-radius: 12px;
+
+
+    box-shadow:
+
+        0 5px 15px rgba(0,0,0,0.15);
+
+}
+
+
+
+
+
+/* Sub Titles */
+
+h2 {
+
+    color: white;
+
+    font-size: 25px;
+
+
+    text-shadow:
+
+        0 3px 8px rgba(0,0,0,0.2);
+
+}

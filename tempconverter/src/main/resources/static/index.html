@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+
+<h1>Temperature Converter</h1>
+
+
+
+<div class="container">
+
+
+<label>Temperature</label>
+<br>
+
+<input 
+    type="number" 
+    id="value" 
+    placeholder="Enter temperature"
+>
+
+
+<br><br>
+
+
+
+<label>Unit</label>
+<br>
+
+
+<select id="unit">
+
+    <option value="C">Celsius</option>
+
+    <option value="F">Fahrenheit</option>
+
+</select>
+
+
+
+<br><br>
+
+
+
+<button onclick="convertTemperature()">
+    Convert
+</button>
+
+
+<button onclick="getHistory()">
+    View History
+</button>
+
+
+<button onclick="checkWarning()">
+    Check Temperature
+</button>
+
+
+<button onclick="clearHistory()">
+    Clear History
+</button>
+
+
+
+<h2>Result</h2>
+
+<div id="result">
+</div>
+
+
+
+<h2>History</h2>
+
+<div id="history">
+</div>
+
+
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
