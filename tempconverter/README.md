@@ -2,6 +2,8 @@
 
 A Spring Boot based Temperature Converter application that converts temperatures between Celsius and Fahrenheit.
 
+This project provides a REST API with MongoDB database integration and a simple web frontend using HTML, CSS, and JavaScript.
+
 ## Features
 
 - Convert Celsius to Fahrenheit
@@ -10,9 +12,9 @@ A Spring Boot based Temperature Converter application that converts temperatures
 - Store conversion history
 - View previous conversions
 - Clear conversion history
-- API Key security
+- API Key authentication security
 - MongoDB database integration
-- Simple web frontend
+- Simple and user-friendly web interface
 
 ## Technologies Used
 
@@ -21,125 +23,214 @@ A Spring Boot based Temperature Converter application that converts temperatures
 - Spring Web
 - Spring Data MongoDB
 - MongoDB
-- HTML
-- CSS
-- JavaScript
 - Maven
+- HTML5
+- CSS3
+- JavaScript
+- Postman
 
 ## Project Structure
-src
- └── main
-     ├── java
-     │    └── com.example.tempconverter
-     │          ├── controller
-     │          ├── service
-     │          ├── repository
-     │          ├── model
-     │          ├── exception
-     │          └── filter
-     │
-     └── resources
-          └── static
-               ├── index.html
-               ├── style.css
-               └── script.js
+
+```
+tempconverter
+│
+├── src
+│   └── main
+│       ├── java
+│       │   └── com.example.tempconverter
+│       │       ├── controller
+│       │       ├── service
+│       │       ├── repository
+│       │       ├── model
+│       │       ├── exception
+│       │       ├── filter
+│       │       └── TempconverterApplication.java
+│       │
+│       └── resources
+│           ├── static
+│           │   ├── index.html
+│           │   ├── style.css
+│           │   └── script.js
+│           │
+│           └── application.properties
+│
+├── pom.xml
+└── README.md
+```
 
 ## API Endpoints
 
-### Convert Temperature
+## 1. Convert Temperature
 
+Method:
+
+```
 POST
+```
 
+URL:
+
+```
 http://localhost:8081/api/temperatures/convert
+```
 
 Example:
 
-value = 25  
+```
+value = 25
 unit = C
+```
 
 Response:
 
+```json
 {
-  "inputValue":25,
-  "inputUnit":"C",
-  "convertedValue":77,
-  "convertedUnit":"FAHRENHEIT",
-  "warning":"Temperature is safe."
+  "inputValue": 25.0,
+  "inputUnit": "C",
+  "convertedValue": 77.0,
+  "convertedUnit": "FAHRENHEIT",
+  "warning": "Temperature is safe."
 }
+```
 
-### View History
+## 2. View Conversion History
 
+Method:
+
+```
 GET
+```
 
+URL:
+
+```
 http://localhost:8081/api/temperatures/history
+```
 
+## 3. Clear History
 
-### Clear History
+Method:
 
+```
 DELETE
+```
 
+URL:
+
+```
 http://localhost:8081/api/temperatures/history
+```
 
+## 4. Check Temperature Warning
 
-### Check Temperature Warning
+Method:
 
+```
 GET
+```
 
+URL:
+
+```
 http://localhost:8081/api/temperatures/warning-check
-
+```
 
 ## API Key Authentication
 
-All API requests require this header:
+This API uses API Key authentication to protect API endpoints.
 
-X-API-KEY : SUPER-SECRET-DEV-KEY-123
+Required Header:
 
+```
+X-API-KEY: SUPER-SECRET-DEV-KEY-123
+```
 
-If the API key is incorrect:
+If an incorrect API key is provided:
 
+```
 Invalid API Key
-
+```
 
 ## Database
 
 MongoDB is used to store temperature conversion history.
 
-MongoDB runs on:
+MongoDB connection:
 
+```
 localhost:27017
+```
 
+Stored data:
+
+- Input temperature value
+- Input unit
+- Converted value
+- Converted unit
+- Warning message
 
 ## Running the Application
 
-Open terminal inside the project folder:
+Requirements:
 
-Run:
+- Java 21
+- Maven
+- MongoDB
 
+
+Run the application:
+
+```
 .\mvnw.cmd spring-boot:run
-
+```
 
 Application starts on:
 
+```
 http://localhost:8081
+```
 
-
-## Frontend
+## Frontend Usage
 
 Open browser:
 
+```
 http://localhost:8081
-
+```
 
 The web interface allows users to:
 
 - Enter temperature value
-- Select temperature unit
+- Select Celsius or Fahrenheit
 - Convert temperature
 - View history
-- Check warnings
+- Check temperature warnings
 - Clear history
 
+## Testing
+
+API testing was performed using:
+
+- Postman
+- Web Browser
+
+Test cases:
+
+- Celsius to Fahrenheit conversion
+- Fahrenheit to Celsius conversion
+- Safe temperature checking
+- Dangerous temperature warning
+- History retrieval
+- History deletion
+
+## Future Improvements
+
+- User login system
+- Swagger API documentation
+- Docker deployment
+- Unit testing
+- Cloud database integration
 
 ## Author
 
-Temperature Converter Project
+Imashi Shashikala
