@@ -3,9 +3,8 @@ function convertTemperature() {
     const value = document.getElementById("value").value;
     const unit = document.getElementById("unit").value;
 
-
     fetch(
-        `http://localhost:8081/api/temperatures/convert?value=${value}&unit=${unit}`,
+        `http://localhost:8080/api/temperatures/convert?value=${value}&unit=${unit}`,
         {
             method: "POST",
             headers: {
@@ -42,12 +41,10 @@ function convertTemperature() {
 
 
 
-
 function getHistory() {
 
-
     fetch(
-        "http://localhost:8081/api/temperatures/history",
+        "http://localhost:8080/api/temperatures/history",
         {
             headers: {
                 "X-API-KEY": "SUPER-SECRET-DEV-KEY-123"
@@ -55,21 +52,15 @@ function getHistory() {
         }
     )
 
-
     .then(response => response.json())
-
 
     .then(data => {
 
-
         let output = "";
-
 
         data.forEach(item => {
 
-
             output +=
-
             "<p>" +
             item.inputValue + " " +
             item.inputUnit +
@@ -82,13 +73,9 @@ function getHistory() {
 
         });
 
-
-        document.getElementById("history").innerHTML =
-        output;
-
+        document.getElementById("history").innerHTML = output;
 
     })
-
 
     .catch(error => {
 
@@ -99,7 +86,6 @@ function getHistory() {
 
     });
 
-
 }
 
 
@@ -107,18 +93,15 @@ function getHistory() {
 
 function checkWarning() {
 
-
     const value =
     document.getElementById("value").value;
-
 
     const unit =
     document.getElementById("unit").value;
 
 
-
     fetch(
-        `http://localhost:8081/api/temperatures/warning-check?value=${value}&unit=${unit}`,
+        `http://localhost:8080/api/temperatures/warning-check?value=${value}&unit=${unit}`,
         {
             headers: {
                 "X-API-KEY": "SUPER-SECRET-DEV-KEY-123"
@@ -126,17 +109,13 @@ function checkWarning() {
         }
     )
 
-
     .then(response => response.text())
-
 
     .then(data => {
 
-        document.getElementById("result").innerHTML =
-        data;
+        document.getElementById("result").innerHTML = data;
 
     })
-
 
     .catch(error => {
 
@@ -147,9 +126,7 @@ function checkWarning() {
 
     });
 
-
 }
-
 
 
 
@@ -158,7 +135,7 @@ function clearHistory() {
 
 
     fetch(
-        "http://localhost:8081/api/temperatures/history",
+        "http://localhost:8080/api/temperatures/history",
         {
             method: "DELETE",
             headers: {
@@ -169,7 +146,6 @@ function clearHistory() {
 
 
     .then(response => {
-
 
         if(response.ok) {
 
@@ -195,6 +171,5 @@ function clearHistory() {
         console.log(error);
 
     });
-
 
 }
