@@ -1,19 +1,15 @@
 version: "3.8"
-
 services:
 
   mongodb:
     image: mongo:8.0
     container_name: tempconverter-mongodb
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo-data:/data/db
 
   tempconverter:
     build: .
     image: tempconverter:latest
     container_name: tempconverter-api
+
     ports:
       - "8081:8081"
     depends_on:
