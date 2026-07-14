@@ -1,6 +1,18 @@
 # Temperature Converter API
 
-A temperature conversion REST API built using **Spring Boot**, **MongoDB**, and **Docker Compose**.
+A RESTful Temperature Converter API developed using Spring Boot, MongoDB, and Docker Compose for the IT41073 – Service Oriented Computing module.
+
+This application converts temperatures between Celsius and Fahrenheit, stores conversion history in MongoDB, provides temperature warning messages, filters conversion records by unit, and allows users to delete stored history. The application is deployed using Docker Compose.
+
+## Project Information
+
+Project Title: Temperature Converter API
+
+Module: IT41073 – Service Oriented Computing
+
+Student Name: M. Imashi Shashikala
+
+Student ID: ITBIN-2313-0135
 
 ## Technologies Used
 
@@ -8,110 +20,93 @@ A temperature conversion REST API built using **Spring Boot**, **MongoDB**, and 
 * Spring Boot
 * Spring Data MongoDB
 * MongoDB 8.0
+* Maven
 * Docker
 * Docker Compose
+* REST API
 * Postman
+* Git
+* GitHub
 
 ## Features
 
-* Convert Celsius to Fahrenheit
-* Convert Fahrenheit to Celsius
-* Store conversion history in MongoDB
-* View conversion history
+* Convert temperatures between Celsius and Fahrenheit
+* Store temperature conversion history in MongoDB
+* View all conversion history
 * Filter history by temperature unit
-* Temperature warning checking
+* Check temperature warning conditions
 * Delete conversion history
-* API Key security validation
+* API Key validation
+* Docker Compose deployment
 
-## API Endpoints
+## Project Structure
+
+```text
+tempconverter
+|
+|-- src
+|-- Dockerfile
+|-- docker-compose.yml
+|-- pom.xml
+|-- README.md
+|-- mvnw
+|-- mvnw.cmd
+```
+
+## REST API Endpoints
 
 Base URL:
 
-```
+```text
 http://localhost:8081/api/temperatures
 ```
 
-### 1. Convert Temperature
+Convert Temperature
 
-**POST**
+Method: POST
 
-```
+Endpoint:
+
+```text
 /convert?value=100&unit=C
 ```
 
 Header:
 
-```
+```text
 API-Key: SUPER-SECRET-DEV-KEY-123
 ```
 
-### 2. View History
+View History
 
-**GET**
+Method: GET
 
-```
+Endpoint:
+
+```text
 /history
 ```
 
-### 3. Filter History
+Filter History
 
-**GET**
+Method: GET
 
-```
+Endpoint:
+
+```text
 /history/filter?unit=C
 ```
 
-### 4. Warning Check
+Warning Check
 
-**GET**
+Method: GET
 
+Endpoint:
+
+```text
+/warning-check?value
 ```
-/warning-check?value=100&unit=C
-```
+## Author
 
-### 5. Delete History
+Name: M. Imashi Shashikala
 
-**DELETE**
-
-```
-/history
-```
-
-## Docker Setup
-
-Build and run the application:
-
-```
-docker compose up --build
-```
-
-Running containers:
-
-* tempconverter-api
-* tempconverter-mongodb
-
-API runs on:
-
-```
-http://localhost:8081
-```
-
-MongoDB runs on:
-
-```
-localhost:27017
-```
-
-## Testing
-
-API endpoints were tested using Postman with the required API Key header.
-
-Example:
-
-```
-API-Key: SUPER-SECRET-DEV-KEY-123
-```
-
-## Project Status
-
-Successfully deployed using Docker Compose with Spring Boot API and MongoDB database.
